@@ -1,0 +1,136 @@
+
+##没有默认值的为必填项. 该文件只在项目顶层时生效
+
+#该项必须包含,切不可修改
+SHELL=/bin/bash
+
+##项目名称
+#PRO_NAME=xxx
+
+##gcc/g++ 版本 default: 4.9
+#CVER=4.9
+
+##交叉编译的目标平台, default: 
+#TARGET=arm-hisiv600-linux
+
+##make install 阶段以该用户身份安装, default: root
+#INSTALL_USER=root
+
+##多线程编译所使用的CPU数量, 目前没有生效. default: 4
+#CPU=8
+
+##是否使用C++11/C11, default: yes
+#USE_C11=no/yes
+
+##项目是否svn管理的项目. default: yes
+#IS_SVNROOT=no/yes
+
+##自动增量版本的起始SVN版本, 增量版本号=当前SVN版本号-起始SVN版本号, default: 1
+#FIX_SVNREV=1
+
+##主要版本, default:0
+#VER_MAJOR=0
+
+##次要版本, default:0
+#VER_MINOR=0
+
+##Patch 版本. default:0
+#VER_BUILD=0
+
+##编译类型, default: release
+#BUILD_TYPE=debug/release
+
+##安装根目录, 可以避免多用户冲突 default:
+#rootdir=
+
+##安装前缀prefix default:/usr/local/xxx
+#prefix=/usr/local/xxx
+
+##打包临时目录, default: $(PRO_DIR)/build
+#USER_PACK_DIR=$(PRO_DIR)/build
+
+##打包输出目录, default: $(PRO_DIR)/release
+#USER_RELEASE_DIR=$(PRO_DIR)/release
+
+##目标CPU类型 default: x86
+#BOARD_ARCH=x64/x86
+
+##GPU arch选项, default:  -gencode arch=compute_32,code=[sm_32,compute_32] \
+##                        -gencode arch=compute_35,code=[sm_35,compute_35] \
+##                        -gencode arch=compute_37,code=[sm_37,compute_37] \
+##                        -gencode arch=compute_50,code=[sm_50,compute_50] \
+##                        -gencode arch=compute_52,code=[sm_52,compute_52] \
+##                        -gencode arch=compute_53,code=[sm_53,compute_53] \
+##                        -gencode arch=compute_60,code=[sm_60,compute_60] \
+##                        -gencode arch=compute_61,code=[sm_61,compute_61] \
+##                        -gencode arch=compute_62,code=[sm_62,compute_62]
+#USER_NVARCH=-gencode arch=compute_30,code=[sm_30,compute_30] \                                                                                                                    
+#                        -gencode arch=compute_32,code=[sm_32,compute_32] \
+#                        -gencode arch=compute_35,code=[sm_35,compute_35] \
+#                        -gencode arch=compute_37,code=[sm_37,compute_37] \
+#                        -gencode arch=compute_50,code=[sm_50,compute_50] \
+#                        -gencode arch=compute_52,code=[sm_52,compute_52] \
+#                        -gencode arch=compute_53,code=[sm_53,compute_53] \
+#                        -gencode arch=compute_60,code=[sm_60,compute_60] \
+#                        -gencode arch=compute_61,code=[sm_61,compute_61] \
+#                        -gencode arch=compute_62,code=[sm_62,compute_62]
+
+##nvcc编译选项 default:
+#USER_NVFLAGS+=
+
+##自定义的头文件包含目录 default:
+#USER_INCS+=
+
+##工作空间目录 default:
+#WORKSPACE=
+
+##额外的宏定义 default:
+#DEFINE_CFLAGS+=
+
+##是否使用内置矢量加速选项 default:no
+#USE_SIMD=no
+
+##矢量加速选项 default:
+#SIMD_CFLAGS+=
+
+##C编译器警告选项 default:
+#WARN_CFLAGS+=
+
+##C++编译器警告选项 default:
+#WARN_CPPFLAGS+=
+
+##全局链接包含目录和链接库, 依赖库 default:
+#DEPLIBS+=
+
+##目标系统类别 default:debian
+#PLATFORM=debian
+
+##打包deb文件时,配置文件列表, 相对于prefix, 空格隔开, apt-get remove 时,配置文件不会删除, default:
+#DEB_CONFIGFILES=
+
+##deb包安装时,是否创建默认配置文件 default:no
+#DEB_CONFIG_CREATE_DEFAULT=no
+
+##deb包安装时,是否覆盖配置文件 default:yes
+#DEB_CONFIG_OVERRIDE=yes
+
+##打包deb文件时, 目标系统中普通用户可读写的目录列表 空格隔开, default:
+#DEB_USERWRITEABLE_DIRS=
+
+##deb包依赖项 default:
+##example: DEB_DEPENDS=darknetapi (>= 0.2.0.14), darknet (>= 0.2.0.14)
+#DEB_DEPENDS=
+
+##deb包配置依赖项 default:
+##example: DEB_PREDEPENDS=darknetapi (>= 0.2.0.14), darknet (>= 0.2.0.14)
+#DEB_PREDEPENDS=
+
+##deb包管理者联系方式 default:
+#DEB_EMAIL=
+
+##产生的版本文件路径 default:
+#VERSION_FILE=
+
+##是否不输出更多信息, default:yes
+#SILENTMAKE=no/yes
+

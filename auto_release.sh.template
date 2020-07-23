@@ -1,0 +1,14 @@
+#!/bin/bash
+#svn up
+MAKECMD="make rootdir=$HOME"
+if [ "$1" == "pack" ]; then
+    $MAKECMD package
+elif [ "$1" == "all" ]; then
+    shift
+    $MAKECMD $@ uninstall
+    $MAKECMD $@ cleanall
+    $MAKECMD $@
+    $MAKECMD $@ bin
+else
+    $MAKECMD $@
+fi

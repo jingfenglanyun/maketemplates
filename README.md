@@ -1,2 +1,1 @@
-# maketemplates
-makefile templates , like as cmake
+功能类似 cmake

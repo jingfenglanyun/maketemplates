@@ -1,0 +1,73 @@
+#1.项目路径, 项目顶层必须包含的配置项 
+#***非项目顶层, 可不设置此项
+PRO_DIR=$(shell pwd)
+
+#2.指定makefile模板所在目录
+MKTEMPLATE_DIR=$(PRO_DIR)/build
+
+#3.必须包含, 不可更改.
+include $(MKTEMPLATE_DIR)/common.mk
+
+
+#Optional, 
+
+##是否清除调试信息
+#STRIP=yes
+
+##是否强制清除调试信息, 外部传入STRIP=no时依然清除
+#FORCESTRIP=no
+
+##需要打包或安装的头文件, 空格隔开
+#HEADERS=sample.h
+
+##需要编译的源文件, 空格隔开
+#SRCS=sample.c sample.cc sample.cpp sample.cu sample.asm sample.nasm
+
+##需要打包或安装的资源文件, 空格隔开, 下同
+#RESOURCES=readme.txt
+
+##--------脚本文件
+#SCRIPTS=sample.sh
+
+##--------依赖库文件(.so/.a)
+#DEPLIBFILES=libtest.so
+
+##编译目标, 动态库名称
+#SHARED_LIB=sample
+
+##编译目标, 静态库名称
+#STATIC_LIB=sample
+
+##编译目标, 可执行文件名称
+#EXEC=sample
+
+##要编译的子目录
+#SUBDIRS=include src config
+
+##要预先编译的依赖目录
+#DEPDIRS=../3rdpart ../common
+
+##是否打包进deb, default:yes
+#PACK_HEADERS=yes/no
+#PACK_RESOURCES=yes/no
+#PACK_SCRIPTS=yes/no
+#PACK_DEPLIBFILES=yes/no
+#PACK_LIB=yes/no
+#PACK_EXEC=yes/no
+
+##是否加密动态库so文件, default:no
+#CIPHER_LIB=yes/no
+##加密文件列表, defualt:空
+#CIPHER_FILES=
+
+##make install 时,是否安装 default:yes
+#INST_HEADERS=yes/no
+#INST_RESOURCES=yes/no
+#INST_SCRIPTS=yes/no
+#INST_DEPLIBFILES=yes/no
+#INST_LIB=yes/no
+#INST_EXEC=yes/no
+
+#4.必须包含,不可修改
+include $(MKTEMPLATE_DIR)/userpost.mk
+
